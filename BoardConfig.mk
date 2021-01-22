@@ -38,6 +38,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-g71
 
+# Cryptfs
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE := true
+
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -55,6 +62,8 @@ TW_DEFAULT_BRIGHTNESS := 150
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
+TW_EXCLUDE_SUPERSU := true
+TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
 TW_NO_LEGACY_PROPS := true
 #TW_USE_TOOLBOX := true
@@ -62,8 +71,6 @@ TW_NO_LEGACY_PROPS := true
 # if busybox doesn't compile, apply this patch:
 # open external/busybox/busybox-full.config, and change "CONFIG_TELNETD=y" to "# CONFIG_TELNETD is not set"
 
-# Crypto
-TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 
 ALLOW_MISSING_DEPENDENCIES := true
