@@ -62,6 +62,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_RIGHT=48
 	export TW_DEVICE_VERSION=R11.0_1
 	export OF_MAINTAINER="Gabriel260"
+	export FOX_ADVANCED_SECURITY="1"
 
 	#export FOX_REMOVE_AAPT=1
 	#export FOX_REMOVE_BASH=1
