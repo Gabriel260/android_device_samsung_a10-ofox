@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
+# Copyright (C) 2019 The Android Open Source Project
+# Copyright (C) 2019 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +15,8 @@
 # limitations under the License.
 #
 
-ifneq ($(filter a10, $(TARGET_DEVICE)),)
-
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
+ifeq ($(TARGET_DEVICE),a10)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

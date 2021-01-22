@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
+# Copyright (C) 2019 The Android Open Source Project
+# Copyright (C) 2019 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +15,12 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := a10
+# Specify phone tech before including full_phone
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit Telephony packages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -29,16 +28,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit language packages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Charger
-PRODUCT_PACKAGES += \
-	charger_res_images
+# Inherit 64bit support
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10/recovery/root,recovery/root)
-
-## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_a10
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a10
-PRODUCT_MODEL := SM-A105F
+PRODUCT_NAME := omni_a10
 PRODUCT_BRAND := samsung
+PRODUCT_MODEL := Samsung Galaxy A10
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_GMS_CLIENTID_BASE := android-samsung
+PRODUCT_RELEASE_NAME := Samsung Galaxy A10
