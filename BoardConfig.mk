@@ -71,7 +71,5 @@ TW_NO_LEGACY_PROPS := true
 # if busybox doesn't compile, apply this patch:
 # open external/busybox/busybox-full.config, and change "CONFIG_TELNETD=y" to "# CONFIG_TELNETD is not set"
 
-TW_INCLUDE_FBE := true
-
 ALLOW_MISSING_DEPENDENCIES := true
 #
