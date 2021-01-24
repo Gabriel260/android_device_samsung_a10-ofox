@@ -4,6 +4,8 @@
 Default_Settings() {
     export ALLOW_MISSING_DEPENDENCIES=true
     export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/13500000.dwmmc0/by-name/recovery"
+    export FOX_RECOVERY_SYSTEM_PARTITION=/dev/block/platform/13500000.dwmmc0/by-name/system
+    export FOX_RECOVERY_VENDOR_PARTITION=/dev/block/platform/13500000.dwmmc0/by-name/vendor
     export FOX_REPLACE_BUSYBOX_PS="1"
     export FOX_USE_BASH_SHELL="1"
     export FOX_USE_LZMA_COMPRESSION="1"
