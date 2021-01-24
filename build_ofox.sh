@@ -24,6 +24,7 @@ Default_Settings() {
     export FOX_R11="1"
     export USE_CCACHE="1"
     export OF_FLASHLIGHT_ENABLE="0"
+    export OF_USE_GREEN_LED=0
     export OF_SCREEN_H="2280"
     export OF_STATUS_INDENT_LEFT=48
     export OF_STATUS_INDENT_RIGHT=48
