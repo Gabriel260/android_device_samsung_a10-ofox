@@ -34,6 +34,7 @@ Default_Settings() {
     export OF_STATUS_INDENT_RIGHT=48
     export FOX_BUILD_TYPE="Stable"
     export FOX_ADVANCED_SECURITY="1"
+    export OF_SKIP_FBE_DECRYPTION=1
 
     # lzma
     [ "$FOX_USE_LZMA_COMPRESSION" = "1" ] && export LZMA_RAMDISK_TARGETS="recovery"
