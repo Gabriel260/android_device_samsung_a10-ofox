@@ -17,6 +17,13 @@
 
 DEVICE_PATH := device/samsung/a10
 
+# Bootloader
+BOARD_VENDOR := samsung
+TARGET_SOC := exynos7884B
+TARGET_BOOTLOADER_BOARD_NAME := universal7885
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
@@ -52,6 +59,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos7884B
+TARGET_BOARD_PLATFORM_GPU := mali-g71
 
 # Cryptfs
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
@@ -86,9 +94,15 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
+RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 150
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_NO_REBOOT_BOOTLOADER := true
@@ -97,3 +111,4 @@ TW_INCLUDE_NTFS_3G := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
+TW_NO_LEGACY_PROPS := true
