@@ -2,6 +2,11 @@
 
 # configure some default settings for the build
 Default_Settings() {
+    export FOX_REPLACE_TOOLBOX_GETPROP=1
+    export FOX_USE_TAR_BINARY=1
+    export FOX_USE_GREP_BINARY=1
+    export FOX_USE_XZ_UTILS=1
+    export FOX_DELETE_INITD_ADDON=1
     export ALLOW_MISSING_DEPENDENCIES=true
     export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/13500000.dwmmc0/by-name/recovery"
     export FOX_RECOVERY_SYSTEM_PARTITION=/dev/block/platform/13500000.dwmmc0/by-name/system
