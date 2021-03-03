@@ -27,7 +27,7 @@ Default_Settings() {
     export OF_OTA_RES_DECRYPT="1"
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
     export OF_USE_NEW_MAGISKBOOT="1"
-    export TARGET_ARCH="arm"
+    export TARGET_ARCH="arm64"
     export TW_DEFAULT_LANGUAGE="en"
     export FOX_VERSION="R11.0"
     export FOX_R11="1"
