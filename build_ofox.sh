@@ -37,6 +37,8 @@ Default_Settings() {
     export FOX_USE_GREP_BINARY=1
     export FOX_USE_XZ_UTILS=1
     export FOX_DELETE_INITD_ADDON=1
+    export OF_DEVICE_WITHOUT_PERSIST=1
+    export OF_DISABLE_EXTRA_ABOUT_PAGE=1
 
     # lzma
     [ "$FOX_USE_LZMA_COMPRESSION" = "1" ] && export LZMA_RAMDISK_TARGETS="recovery"

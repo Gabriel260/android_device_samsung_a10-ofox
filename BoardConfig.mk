@@ -17,6 +17,13 @@
 
 DEVICE_PATH := device/samsung/a10
 
+# Bootloader
+BOARD_VENDOR := samsung
+TARGET_SOC := exynos7884B
+TARGET_BOOTLOADER_BOARD_NAME := universal7885
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -59,6 +66,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos7884B
+TARGET_BOARD_PLATFORM_GPU := mali-g71
 
 # Cryptfs
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
@@ -94,6 +102,10 @@ PLATFORM_VERSION := 16.1.0
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TW_NO_LEGACY_PROPS := true
+
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_FORCE_USE_BUSYBOX := true
 TW_MAX_BRIGHTNESS := 255
