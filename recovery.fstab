@@ -1,23 +1,22 @@
-/boot		emmc	/dev/block/platform/13500000.dwmmc0/by-name/boot	flags=backup=1;display="Boot"
-/cache		ext4	/dev/block/platform/13500000.dwmmc0/by-name/cache	flags=backup=1;display="Cache"
-/data		ext4	/dev/block/platform/13500000.dwmmc0/by-name/userdata	flags=display="Data";encryptable=footer;length=-20480;fileencryption=ice
-/storage	ext4	/data/media/0	flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
-/recovery	emmc	/dev/block/platform/13500000.dwmmc0/by-name/recovery	flags=backup=1;display="Recovery"
-/efs		emmc	/dev/block/platform/13500000.dwmmc0/by-name/efs		flags=backup=1;display="EFS"
-/cpefs		emmc	/dev/block/platform/13500000.dwmmc0/by-name/cpefs	flags=backup=1;subpartitionof=/efs
-/modem		emmc	/dev/block/platform/13500000.dwmmc0/by-name/radio	flags=backup=1;display="Modem"
-/misc		emmc	/dev/block/platform/13500000.dwmmc0/by-name/misc	flags=backup=1;display="Misc"
-/cp_debug	emmc	/dev/block/platform/13500000.dwmmc0/by-name/cp_debug	flags=backup=1;display="CP Debug"
-/param		emmc	/dev/block/platform/13500000.dwmmc0/by-name/param	flags=backup=1;display="Param"
-/dtb		emmc	/dev/block/platform/13500000.dwmmc0/by-name/dtb		flags=backup=1;display="DTB"
-/dtbo		emmc	/dev/block/platform/13500000.dwmmc0/by-name/dtbo	flags=backup=1;display="DTBO"
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/product       ext4 /dev/block/platform/13500000.dwmmc0/by-name/product  flags=backup=1;wipeingui;display="Product"
-/product_image emmc /dev/block/platform/13500000.dwmmc0/by-name/product  flags=backup=1;flashimg;display="Product Image"
-/system        ext4 /dev/block/platform/13500000.dwmmc0/by-name/system  flags=backup=1;wipeingui;display="System"
-/system_image  emmc /dev/block/platform/13500000.dwmmc0/by-name/system  flags=backup=1;flashimg;display="System Image"
-/vendor        ext4 /dev/block/platform/13500000.dwmmc0/by-name/vendor  flags=backup=1;wipeingui;display="Vendor"
-/vendor_image  emmc /dev/block/platform/13500000.dwmmc0/by-name/vendor  flags=backup=1;flashimg;display="Vendor Image"
+# Mount point               FS         Device                                                                Flags
+/boot                        emmc      /dev/block/platform/13500000.dwmmc0/by-name/boot
+/recovery                    emmc     /dev/block/platform/13500000.dwmmc0/by-name/recovery        flags=display="Recovery";flashimg=1;backup=1
+/cache                       ext4       /dev/block/platform/13500000.dwmmc0/by-name/cache
+/system_root                ext4       /dev/block/platform/13500000.dwmmc0/by-name/system         flags=display=System
+/vendor                      ext4       /dev/block/platform/13500000.dwmmc0/by-name/vendor         flags=display=Vendor;backup=1;wipeingui 
 
-/sdcard1	vfat	/dev/block/mmcblk1p1 /dev/block/mmcblk1			flags=display="MicroSD";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sda1 /dev/block/sda				flags=display="USB Storage";storage;wipeingui;removable
+/system_image              emmc    /dev/block/platform/13500000.dwmmc0/by-name/system         flags=backup=1;flashimg=1
+/vendor_image              emmc    /dev/block/platform/13500000.dwmmc0/by-name/vendor          flags=backup=1;flashimg=1
+/data                        ext4      /dev/block/platform/13500000.dwmmc0/by-name/userdata        flags=display="Data";encryptable=footer;length=-20480;fileencryption=ice
+/dtbo                        emmc    /dev/block/platform/13500000.dwmmc0/by-name/dtbo
+/vbmeta                     emmc    /dev/block/platform/13500000.dwmmc0/by-name/vbmeta          flags=display="Vbmeta";flashimg=1;backup=1
+/efs                         emmc    /dev/block/platform/13500000.dwmmc0/bg-name/efs               flags=backup=1;display="EFS"
+/product                    ext4      /dev/block/platform/13500000.dwmmc0/by-name/product          flags=backup=0;display="Product"
+/product_image            emmc    /dev/block/platform/13500000.dwmmc0/by-name/product          flags=backup=1;flashimg;display="Product Image"
+
+# External storage
+/external_sd                vfat    /dev/block/mmcblk1p1 /dev/block/mmcblk1                           flags=fsflags=utf8;display="Micro SDcard";storage;wipeingui;removable
