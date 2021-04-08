@@ -27,6 +27,7 @@ Default_Settings() {
     export USE_CCACHE="1"
     export OF_FLASHLIGHT_ENABLE="1"
     export OF_FL_PATH1="/sys/devices/virtual/camera/flash/rear_torch_flash"
+    export OF_FL_PATH2="/sys/devices/virtual/camera/flash/rear_flash"
     export OF_SCREEN_H="2280"
     export FOX_BUILD_TYPE="Unofficial"
     export FOX_ADVANCED_SECURITY="1"
